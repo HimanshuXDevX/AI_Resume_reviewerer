@@ -21,7 +21,7 @@ Others:	Pydantic, JWT, Docker, Reddis, Clerk
 
 ⚙️ Installation & Setup
 1️⃣ Clone the repository
-git clone https://github.com/HimanshuXDevX/AI_powered_ATS.git
+git clone https://github.com/HimanshuXDevX/AI_Resume_reviewerer.git
 
 2️⃣ Backend Setup (FastAPI)
 1. cd backend
