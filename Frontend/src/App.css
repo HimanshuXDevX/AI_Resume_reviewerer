@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-dark-200: #a0a0a0;
+  --color-light-blue-100: #ff3b3020;
+  --color-light-blue-200: #ff000030;
+
+  --color-badge-green: #00ff5520;
+  --color-badge-red: #ff000030;
+  --color-badge-yellow: #ffff0030;
+
+  --color-badge-green-text: #00ffaa;
+  --color-badge-red-text: #ff5555;
+  --color-badge-yellow-text: #ffff55;
+}
+
+html,
+body {
+  @apply bg-black;
+}
+
+main {
+  @apply min-h-screen pt-8 relative z-10; /* reduced padding */
+}
+
+h1 {
+  @apply text-6xl text-gradient leading-tight tracking-[-1px] font-semibold;
+  background: linear-gradient(to right, #ffffff, #f0f0f0, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+h2 {
+  @apply text-2xl text-white font-medium;
+}
+
+label {
+  @apply text-lg text-white font-medium;
+}
+
+input {
+  @apply w-full p-3 rounded-xl focus:outline-none bg-gray-800 border border-gray-600 text-sm text-white focus:border-red-500 focus:ring-2 focus:ring-red-500/20;
+}
+
+textarea {
+  @apply w-full p-3 rounded-xl focus:outline-none bg-gray-900 border border-gray-700 text-sm text-white;
+}
+
+form {
+  @apply flex flex-col items-start gap-8 w-full;
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#d0d0d0] to-[#909090];
+  }
+
+  .gradient-border {
+    @apply bg-gradient-to-b from-red-900/30 to-red-800/50 p-3 rounded-xl border border-red-900/50;
+  }
+
+  .primary-button {
+    @apply primary-gradient text-white rounded-full px-7 py-4 cursor-pointer w-full text-xl font-semibold;
+  }
+
+  .resume-nav {
+    @apply flex flex-row justify-between items-center p-3 border-b border-red-900/30 bg-black/50;
+  }
+
+  .resume-summary {
+    @apply flex flex-row items-center justify-center p-3 gap-3;
+  }
+
+  .resume-summary .category {
+    @apply flex flex-row gap-2 items-center bg-gray-900/50 rounded-xl p-3 w-full justify-between border border-gray-800 text-sm;
+  }
+
+  .back-button {
+    @apply flex flex-row items-center gap-2 border border-red-900/30 rounded-md p-2 shadow-sm bg-black/30 text-white text-sm;
+  }
+
+  .auth-button {
+    @apply primary-gradient rounded-full py-3 px-6 cursor-pointer w-[500px] max-md:w-full text-2xl font-semibold text-white border border-red-500/30;
+  }
+
+  .main-section {
+    @apply flex flex-col items-center gap-6 pt-10 mx-12 pb-4;
+  }
+
+  .page-heading {
+    @apply flex flex-col items-center gap-9 max-w-3xl text-center;
+  }
+
+  .resumes-section {
+    @apply flex flex-wrap max-lg:flex-col gap-25 items-start w-full max-w-[1700px] justify-evenly;
+  }
+
+  .resume-card {
+    @apply flex flex-col h-[400px] w-full lg:w-[420px] xl:w-[380px] bg-gray-900/70 rounded-xl p-3 border border-red-900/30 backdrop-blur-sm;
+  }
+
+  .resume-card-header {
+    @apply flex flex-row gap-7 justify-between min-h-[90px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+  }
+
+  .feedback-section {
+    @apply flex flex-col gap-6 w-1/2 px-6 max-lg:w-full py-4;
+  }
+
+  .navbar {
+    @apply flex flex-row justify-between items-center bg-gray-900/80 rounded-full p-3 w-full px-8 max-w-[1100px] mx-auto border border-red-900/30 backdrop-blur-sm;
+  }
+
+  .score-badge {
+    @apply flex flex-row items-center justify-center py-0.5 px-1.5 gap-2 rounded-[96px] bg-black border border-red-900/20 text-xs;
+  }
+
+  .form-div {
+    @apply flex flex-col gap-2 w-full items-start;
+  }
+
+  .uplader-drag-area {
+    @apply relative p-6 text-center transition-all duration-700 cursor-pointer bg-gray-900/50 rounded-xl min-h-[180px] border-2 border-dashed border-red-900/30 text-gray-300 text-sm;
+  }
+
+  .uploader-selected-file {
+    @apply flex items-center justify-between p-2 bg-gray-900/30 rounded-xl border border-gray-700 text-sm text-white;
+  }
+}
+
+/* === Utilities === */
+@utility bg-gradient {
+  background: linear-gradient(to bottom, #1a0000 60%, #330000cc);
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#d0d0d0] to-[#909090];
+}
+
+@utility gradient-hover {
+  @apply bg-gradient-to-b from-red-900/20 to-red-800/30;
+}
+
+@utility primary-gradient {
+  background: linear-gradient(to bottom, #cc0000, #990000);
+  box-shadow: 0px 40px 15px 0px #66000000;
+}
+
+@utility primary-gradient-hover {
+  background: linear-gradient(to bottom, #ff0000, #cc0000);
+}
+
+@utility inset-shadow {
+  box-shadow: inset 0 0 8px 0 rgba(255, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff000050 #000000;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #ff000050; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ff000070; }
+
+/* === Netflix-style Cinematic Overlay === */
+.overlay-gradient {
+  @apply absolute inset-0 z-5;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.8)
+  );
+  backdrop-filter: blur(3px);
+  transition: background 0.5s ease-in-out;
+}
+
+
+/* Animated subtle tint */
+@keyframes overlayPulse {
+  0%, 100% {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.8)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.65),
+      rgba(20, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.85)
+    );
+  }
+}
+
+/* Apply the overlay animation */
+.overlay-gradient.animate {
+  animation: overlayPulse 10s infinite ease-in-out;
+}
+
+/* Optional subtle tint at top */
+body::after {
+  content: "";
+  @apply fixed inset-0 pointer-events-none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent 70%);
+  backdrop-filter: blur(1.5px);
+  z-index: 1;
+}
