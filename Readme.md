@@ -1,7 +1,9 @@
 🧠 AI Resume Reviewer:
+
 An intelligent Resume Review Tool that uses AI to evaluate resumes, check ATS (Applicant Tracking System) compatibility, and provide actionable improvement suggestions. It also generates role-specific responsibilities and scores the resume out of 100 based on formatting, keywords, and content relevance.
 
 🚀 Features:
+
 ✅ ATS Compatibility Check — Analyze resume structure, formatting, and keyword optimization.
 📊 Resume Scoring System — Get an overall score (0–100) for your resume.
 💡 Improvement Suggestions — Personalized tips to improve your resume’s performance.
@@ -10,6 +12,7 @@ An intelligent Resume Review Tool that uses AI to evaluate resumes, check ATS (A
 ⚙️ High-Performance Backend — Powered by FastAPI and integrated with AI models.
 
 🏗️ Tech Stack:
+
 Frontend: React.js, TailwindCSS
 Backend: FastAPI (Python)
 AI/ML: OpenAI / Gemini
